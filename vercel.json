@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/mytype.html"
+    },
+    {
+      "source": "/mytype",
+      "destination": "/mytype.html"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/icons/favicon.ico"
+    },
+    {
+      "source": "/favicon.svg",
+      "destination": "/icons/favicon.svg"
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": "/icons/apple-touch-icon.png"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(sw.js|manifest.json)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ]
+}
